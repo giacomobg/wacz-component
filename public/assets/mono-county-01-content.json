@@ -1,0 +1,146 @@
+{
+    "contentMetadata": {
+        "name": "Mono County Web Page",
+        "mime": "application/wacz",
+        "description": "Cultural Humility web page: Moving Towards Equity: Understanding the Impact of Racism in Communities: A presentation by Dr. Jei Africa on the impacts of racism on communities, and a discussion of how Mono County can address these impacts. ",
+        "author": {
+            "@type": "",
+            "name": "",
+            "identifier": ""
+        },
+        "extras": {
+            "wacz": {
+                "authsignSoftware": "authsigner 0.5.0",
+                "authsignDomain": "org2.authsign.stg.starlinglab.org",
+                "waczVersion": "1.1.1",
+                "software": "py-wacz 0.4.9",
+                "dateCrawled": "2023-07-27T15:14:25Z",
+                "userAgentCrawled": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.49 Safari/537.36",
+                "pages": {
+                    "93276967-ca55-4cba-baf5-b22bf75009fb": "https://monocounty.ca.gov/behavioral-health/page/cultural-humility-1"
+                }
+            },
+            "additional": {}
+        },
+        "private": {
+            "crawl_config": {
+                "id": "eb6e6c62-040a-4a71-99f0-bfbe04d869e4",
+                "schedule": "",
+                "jobType": "custom",
+                "config": {
+                    "seeds": [
+                        {
+                            "url": "https://monocounty.ca.gov/behavioral-health/page/cultural-humility-1",
+                            "scopeType": "page",
+                            "include": null,
+                            "exclude": null,
+                            "sitemap": null,
+                            "allowHash": null,
+                            "depth": null,
+                            "extraHops": null
+                        }
+                    ],
+                    "scopeType": "page",
+                    "include": null,
+                    "exclude": null,
+                    "depth": -1,
+                    "limit": 0,
+                    "extraHops": 0,
+                    "lang": null,
+                    "blockAds": false,
+                    "behaviorTimeout": 300,
+                    "pageLoadTimeout": null,
+                    "pageExtraDelay": 0,
+                    "workers": null,
+                    "headless": null,
+                    "generateWACZ": null,
+                    "combineWARC": null,
+                    "useSitemap": false,
+                    "logging": null,
+                    "behaviors": "autoscroll,autoplay,autofetch,siteSpecific"
+                },
+                "tags": [],
+                "crawlTimeout": 86400,
+                "scale": 1,
+                "oid": "19966664-fd54-45ce-babc-1776c45d2309",
+                "profileid": "f943f32b-4b44-4ea0-ba89-a24015a6f195",
+                "name": "mono-county-web-02",
+                "description": null,
+                "created": "2023-07-27T13:04:03",
+                "createdBy": "0df2dd60-7773-498d-8679-05c0bf16c112",
+                "modified": "2023-07-27T13:04:03",
+                "modifiedBy": "0df2dd60-7773-498d-8679-05c0bf16c112",
+                "autoAddCollections": [],
+                "inactive": false,
+                "rev": 0,
+                "crawlAttemptCount": 1,
+                "crawlCount": 1,
+                "crawlSuccessfulCount": 1,
+                "totalSize": 18034115,
+                "lastCrawlId": "manual-20230727130404-eb6e6c62-040",
+                "lastCrawlStartTime": "2023-07-27T13:04:04",
+                "lastStartedBy": "0df2dd60-7773-498d-8679-05c0bf16c112",
+                "lastCrawlTime": "2023-07-27T15:15:15",
+                "lastCrawlState": "complete",
+                "lastCrawlSize": 18034115,
+                "lastRun": "2023-07-27T15:15:15",
+                "isCrawlRunning": false,
+                "lastCrawlStopping": false,
+                "profileName": "Daryl-Starling",
+                "createdByName": "admin",
+                "modifiedByName": "admin",
+                "lastStartedByName": "admin",
+                "firstSeed": null
+            },
+            "crawl_data": {
+                "id": "manual-20230727130404-eb6e6c62-040",
+                "type": "crawl",
+                "userid": "0df2dd60-7773-498d-8679-05c0bf16c112",
+                "oid": "19966664-fd54-45ce-babc-1776c45d2309",
+                "userName": "admin",
+                "name": "mono-county-web-02",
+                "description": null,
+                "started": "2023-07-27T13:04:04",
+                "finished": "2023-07-27T15:15:15",
+                "state": "complete",
+                "stats": {
+                    "found": 1,
+                    "done": 1,
+                    "size": 17986334
+                },
+                "fileSize": 18034115,
+                "fileCount": 1,
+                "tags": [],
+                "errors": null,
+                "collections": [],
+                "cid": "eb6e6c62-040a-4a71-99f0-bfbe04d869e4",
+                "firstSeed": "https://monocounty.ca.gov/behavioral-health/page/cultural-humility-1",
+                "seedCount": 1,
+                "profileName": null,
+                "stopping": false,
+                "manual": true,
+                "cid_rev": 0,
+                "resources": [
+                    {
+                        "name": "19966664-fd54-45ce-babc-1776c45d2309/20230727151426097-eb6e6c62-040-0.wacz",
+                        "path": "/data/19966664-fd54-45ce-babc-1776c45d2309/20230727151426097-eb6e6c62-040-0.wacz?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ADMIN%2F20230727%2F%2Fs3%2Faws4_request&X-Amz-Date=20230727T151543Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3d443f71654e6bab2a9d8e760c5a7a56ce357f831f3a8c2110b8f2ce5fc0375b",
+                        "hash": "774a9b1bd304b9e7548a29e5ee7fb0d414ad17401eb99501e02abefc8e0f60a6",
+                        "size": 18034115,
+                        "crawlId": "manual-20230727130404-eb6e6c62-040"
+                    }
+                ]
+            },
+            "additional": {}
+        },
+        "timestamp": "2023-07-27T15:15:43.343876Z",
+        "validatedSignatures": [
+            {
+                "provider": "authsigner 0.5.0",
+                "algorithm": "ecdsa-certificate-sig",
+                "custom": {
+                    "hash": "sha256:f7a4fdcbaa1ed5a74e63b46c843a2d8548b95c512195ac95b3adc62616612dcd",
+                    "created": "2023-07-27T15:14:25Z",
+                    "software": "authsigner 0.5.0",
+                    "signature": "MEQCIFp9hSFp0cOYjg7cJjp3JCkGshSVO+HGZK89RNIU7oB6AiBfBUkK6zJIm838I9YxEpd+OB/h2ZP/gQ725Sizr/Du1A==",
+                    "domain": "org2.authsign.stg.starlinglab.org",
+                    "domainCert": "-----BEGIN CERTIFICATE-----\nMIIERDCCAyygAwIBAgISA1zy3QQDWxr/FTst89bOpFaoMA0GCSqGSIb3DQEBCwUA\nMDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD\nEwJSMzAeFw0yMzA3MjQxNTMzNDRaFw0yMzEwMjIxNTMzNDNaMCwxKjAoBgNVBAMT\nIW9yZzIuYXV0aHNpZ24uc3RnLnN0YXJsaW5nbGFiLm9yZzBZMBMGByqGSM49AgEG\nCCqGSM49AwEHA0IABMcGWNOaYTubyveHOnBm94Plz0ZfkffOijdxhWDi2i2ypU+R\nq7I6a52Q+gQYFqqIOTypueAznrq62D3RvjNx3t6jggIjMIICHzAOBgNVHQ8BAf8E\nBAMCB4AwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC\nMAAwHQYDVR0OBBYEFNfQF8g1TsU2G0SU3rF4/vGfch1FMB8GA1UdIwQYMBaAFBQu\nsxe3WFbLrlAJQOYfr52LFMLGMFUGCCsGAQUFBwEBBEkwRzAhBggrBgEFBQcwAYYV\naHR0cDovL3IzLm8ubGVuY3Iub3JnMCIGCCsGAQUFBzAChhZodHRwOi8vcjMuaS5s\nZW5jci5vcmcvMCwGA1UdEQQlMCOCIW9yZzIuYXV0aHNpZ24uc3RnLnN0YXJsaW5n\nbGFiLm9yZzATBgNVHSAEDDAKMAgGBmeBDAECATCCAQQGCisGAQQB1nkCBAIEgfUE\ngfIA8AB2ALc++yTfnE26dfI5xbpY9Gxd/ELPep81xJ4dCYEl7bSZAAABiYi/5aMA\nAAQDAEcwRQIgGD4oZPJ+CoYR1hmWiKVR1LIMv2HLnFqIKE673aEdl9cCIQDnhMc1\nbB9btfKaIvOW+ghAf+Nond/8bXJx/SFOOehl6AB2AHoyjFTYty22IOo44FIe6YQW\ncDIThU070ivBOlejUutSAAABiYi/5boAAAQDAEcwRQIhAJEDfMD3hZSePec5MQaX\n2dWBxKzk0habfwLGJrhnhfIMAiBt1Lx6liHKVgKbAj8ggcAGvT1sBbEF5YAUw4bs\nXIWu1DANBgkqhkiG9w0BAQsFAAOCAQEAWIiZqUAvo4KV84HxHuVEMXf56aSxU0Ho\nOxSCeLtxFiojCFDEQtz/EHspfANDPk3sfWAtKvfKv52lHdTuu25lT50BzYYrwaHD\n/eJSEvxzzuhLNcR8R7ZfcDRjOgfbAevbZfkMMAT4HMo8KYkd7b/OUstxHrJ1f+kV\nqjWGI7A+kvnbNfAyinxEnO+RvXQSroTcNUVKE4a9NCi/oMMLddeHWS/4vTJ8NBqY\nSio38iLNF1bL8cLke+QDNvQIddSptmmmTKMnRCluc3FriU7rhyZDu9W+ScOVhn5t\n6oqm+C5NoEkXW4Y59qqdIq96ePhQcHUQwiEfyzjR0alWNqy1oiHF3A==\n-----END CERTIFICATE-----\n\n-----BEGIN CERTIFICATE-----\nMIIFFjCCAv6gAwIBAgIRAJErCErPDBinU/bWLiWnX1owDQYJKoZIhvcNAQELBQAw\nTzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh\ncmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMjAwOTA0MDAwMDAw\nWhcNMjUwOTE1MTYwMDAwWjAyMQswCQYDVQQGEwJVUzEWMBQGA1UEChMNTGV0J3Mg\nRW5jcnlwdDELMAkGA1UEAxMCUjMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK\nAoIBAQC7AhUozPaglNMPEuyNVZLD+ILxmaZ6QoinXSaqtSu5xUyxr45r+XXIo9cP\nR5QUVTVXjJ6oojkZ9YI8QqlObvU7wy7bjcCwXPNZOOftz2nwWgsbvsCUJCWH+jdx\nsxPnHKzhm+/b5DtFUkWWqcFTzjTIUu61ru2P3mBw4qVUq7ZtDpelQDRrK9O8Zutm\nNHz6a4uPVymZ+DAXXbpyb/uBxa3Shlg9F8fnCbvxK/eG3MHacV3URuPMrSXBiLxg\nZ3Vms/EY96Jc5lP/Ooi2R6X/ExjqmAl3P51T+c8B5fWmcBcUr2Ok/5mzk53cU6cG\n/kiFHaFpriV1uxPMUgP17VGhi9sVAgMBAAGjggEIMIIBBDAOBgNVHQ8BAf8EBAMC\nAYYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMBIGA1UdEwEB/wQIMAYB\nAf8CAQAwHQYDVR0OBBYEFBQusxe3WFbLrlAJQOYfr52LFMLGMB8GA1UdIwQYMBaA\nFHm0WeZ7tuXkAXOACIjIGlj26ZtuMDIGCCsGAQUFBwEBBCYwJDAiBggrBgEFBQcw\nAoYWaHR0cDovL3gxLmkubGVuY3Iub3JnLzAnBgNVHR8EIDAeMBygGqAYhhZodHRw\nOi8veDEuYy5sZW5jci5vcmcvMCIGA1UdIAQbMBkwCAYGZ4EMAQIBMA0GCysGAQQB\ngt8TAQEBMA0GCSqGSIb3DQEBCwUAA4ICAQCFyk5HPqP3hUSFvNVneLKYY611TR6W\nPTNlclQtgaDqw+34IL9fzLdwALduO/ZelN7kIJ+m74uyA+eitRY8kc607TkC53wl\nikfmZW4/RvTZ8M6UK+5UzhK8jCdLuMGYL6KvzXGRSgi3yLgjewQtCPkIVz6D2QQz\nCkcheAmCJ8MqyJu5zlzyZMjAvnnAT45tRAxekrsu94sQ4egdRCnbWSDtY7kh+BIm\nlJNXoB1lBMEKIq4QDUOXoRgffuDghje1WrG9ML+Hbisq/yFOGwXD9RiX8F6sw6W4\navAuvDszue5L3sz85K+EC4Y/wFVDNvZo4TYXao6Z0f+lQKc0t8DQYzk1OXVu8rp2\nyJMC6alLbBfODALZvYH7n7do1AZls4I9d1P4jnkDrQoxB3UqQ9hVl3LEKQ73xF1O\nyK5GhDDX8oVfGKF5u+decIsH4YaTw7mP3GFxJSqv3+0lUFJoi5Lc5da149p90Ids\nhCExroL1+7mryIkXPeFM5TgO9r0rvZaBFOvV2z0gp35Z0+L4WPlbuEjN/lxPFin+\nHlUjr8gRsI3qfJOQFy/9rKIJR0Y/8Omwt/8oTWgy1mdeHmmjk7j1nYsvC9JSQ6Zv\nMldlTTKB3zhThV1+XWYp6rjd5JW1zbVWEkLNxE7GJThEUG3szgBVGP7pSWTUTsqX\nnLRbwHOoq7hHwg==\n-----END CERTIFICATE-----\n\n-----BEGIN CERTIFICATE-----\nMIIFYDCCBEigAwIBAgIQQAF3ITfU6UK47naqPGQKtzANBgkqhkiG9w0BAQsFADA/\nMSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT\nDkRTVCBSb290IENBIFgzMB4XDTIxMDEyMDE5MTQwM1oXDTI0MDkzMDE4MTQwM1ow\nTzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh\ncmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwggIiMA0GCSqGSIb3DQEB\nAQUAA4ICDwAwggIKAoICAQCt6CRz9BQ385ueK1coHIe+3LffOJCMbjzmV6B493XC\nov71am72AE8o295ohmxEk7axY/0UEmu/H9LqMZshftEzPLpI9d1537O4/xLxIZpL\nwYqGcWlKZmZsj348cL+tKSIG8+TA5oCu4kuPt5l+lAOf00eXfJlII1PoOK5PCm+D\nLtFJV4yAdLbaL9A4jXsDcCEbdfIwPPqPrt3aY6vrFk/CjhFLfs8L6P+1dy70sntK...
