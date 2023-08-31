@@ -4,9 +4,9 @@
     export let filename;
 
     // async function import_json() {
-        const json_content = fetch('https://giacomobg.github.io.wacz-component/dist/assets/'+filename+'.content.json')['contentMetadata'];
+        const json_content = fetch('https://giacomobg.github.io/wacz-component/dist/assets/'+filename+'.content.json')['contentMetadata'];
         console.log(json_content);
-        const json = fetch('https://giacomobg.github.io.wacz-component/dist/assets/'+filename+'.json');
+        const json = fetch('https://giacomobg.github.io/wacz-component/dist/assets/'+filename+'.json');
     // }
     // import_json();
     // import data from json_filename;
