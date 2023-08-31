@@ -1,0 +1,44 @@
+{
+  "inputBundle": {
+    "sha256": "e21aa74e531bdc70d7b427ae7d075209854f5ee7eaafda52aeee74f17c713c87"
+  },
+  "content": {
+    "sha256": "d124905d670ef0bd216d09444ec7c902eb8cc8649281217ef40e06cc7ec10712",
+    "md5": "6be199403ea86d198648220646e377aa",
+    "cid": "bafybeigt5e6cjf3tzfcjtygr7rp34sxulnittq2srjyh6vluoacavggv2a"
+  },
+  "archive": {
+    "sha256": "0e98ce385a0c8dd8dc77eb8ab8397a9e215db65c7755f9596ef63222138cbd93",
+    "md5": "dba7cf553435632c93a92bf308f1d354",
+    "cid": "bafybeiaxp4v64w3ajjjzzlltdpdiaw7idjq5mcptdchhdg3yohbosgsyei"
+  },
+  "archiveEncrypted": {
+    "sha256": "b11191dc7b7d61a54802fbba982ae0123deb785b9daae8bc51ddbf0820e96561",
+    "md5": "2045c570ead5662494f0790e0ce46d67",
+    "cid": "bafybeiamgh26ys4ih5fwfqhin3rtiewv6edwf3qe3g3gmbukgt7zsrwahu"
+  },
+  "registrationRecords": {
+    "iscn": {
+      "txHash": "3C61D883F057A9B18B3E638E6191CFEFE4134D50623B8B60780B3C6348521B15",
+      "iscnId": "iscn://likecoin-chain/v-RN2sfejSlZQmB_zjxiSMgNDVepIWHMGw34imbMGQs/1"
+    },
+    "numbersProtocol": {
+      "numbers": {
+        "txHash": "0x748dad02365d9f265e02a044b0d03b5d5facfa4e3a519477cb316c2913844a13",
+        "assetCid": "bafybeiamgh26ys4ih5fwfqhin3rtiewv6edwf3qe3g3gmbukgt7zsrwahu",
+        "assetTreeCid": "bafkreigfsh2wz2zhch4tvahxob3fgvci7wpxhoet6yfh257iwgxd57xffe",
+        "order_id": "a6e374e7-37ef-4970-828f-e8356bb9d11c"
+      },
+      "avalanche": {
+        "txHash": "0x0a15e49ec0da711f7c6dd0efe0f3dc4373a4b9e87b4efa759720e8f69a90f41a",
+        "assetCid": "bafybeiamgh26ys4ih5fwfqhin3rtiewv6edwf3qe3g3gmbukgt7zsrwahu",
+        "assetTreeCid": "bafkreigfsh2wz2zhch4tvahxob3fgvci7wpxhoet6yfh257iwgxd57xffe",
+        "order_id": "d687c072-972b-49d8-8c55-cedc2d7d6b8f"
+      }
+    }
+  },
+  "sourceId": {
+    "key": "wacz-id",
+    "value": "mono-county-pdf-01"
+  }
+}
