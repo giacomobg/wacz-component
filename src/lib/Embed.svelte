@@ -1,3 +1,5 @@
+<svelte:options customElement="embed-element"/>
+
 <script>
 
     export let visible;
