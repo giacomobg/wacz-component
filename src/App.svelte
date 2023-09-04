@@ -6,16 +6,17 @@
 
   export let filename = 'mono-county-pdf-01-2023-08-25T15-57-33.wacz';
   // let visible = false;
+  export let https_link = 'https://giacomobg.github.io/wacz-component/dist/assets/'
 
   let json_content;
 
   async function import_json() {
-      let response = await fetch('https://giacomobg.github.io/wacz-component/dist/assets/'+filename+'.content.json');
+      let response = await fetch(https_link+filename+'.content.json');
       let response_json = await response.json();
       const json_content = response_json['contentMetadata']
       console.log(json_content);
       url = json_content['private']['crawl_config']['config']['seeds'][0]['url'];
-      const json = await fetch('https://giacomobg.github.io/wacz-component/dist/assets/'+filename+'.json');
+      const json = await fetch(https_link + filename + '.json');
   }
   import_json();
   // import data from json_filename;
@@ -39,7 +40,7 @@
   
       <p class='info-title'>Mono County</p>
     
-      <replay-web-page id="embed" source={"/assets/" + filename} embed="replay-only" {url}>
+      <replay-web-page id="embed" source={"assets/" + filename} embed="replay-only" {url}>
       </replay-web-page>
     
       <div id="info">
