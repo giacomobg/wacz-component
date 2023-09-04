@@ -40,7 +40,7 @@
   
       <p class='info-title'>Mono County</p>
     
-      <replay-web-page id="embed" source={https_link + filename} embed="replay-only" {url}>
+      <replay-web-page id="embed" source={"assets/" + filename} embed="replay-only" {url}>
       </replay-web-page>
     
       <div id="info">
