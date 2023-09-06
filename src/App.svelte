@@ -8,7 +8,7 @@
   // let visible = false;
   export let path = 'https://giacomobg.github.io/wacz-component/dist/assets/'
   // export let replayBase;
-  export let replayBase = './replay/';
+  export let replayBase = './dist/replay/';
 
   // let json_content;
   // let json;
@@ -68,26 +68,32 @@
         replayBase={replayBase}
         >
       </replay-web-page>
-    
-      <div id="info">
-        {#if parsed_json}
-        <p><strong>Archive name</strong><br>{archive_name}</p>
-        <p><strong>Webpage</strong><br><a href={url}>{url}</a></p>
-        <p><strong>Archived on</strong><br>{date_crawled}</p>
-        <p><strong>Observed by</strong><br>{domain}<br>{domainCert.slice(0,100)}</p>
-        <p><strong>Package hash</strong><br>{package_hash}</p>
+      
+      <!-- <button on:click={open}>View archive information</button> -->
+      <details>
+        <summary><span>View archive information</span></summary>
+      </details>
 
-        <p><strong>Blockchain registration</strong></p>
-        <p><strong>ISCN on Likecoin</strong><br>Transaction ID: <a href={"https://app.like.co/"}>{iscn}</a></p>
-        <p><strong>Numbers Protocol on Numbers</strong><br>Transaction ID: <a href={"https://mainnet.num.network/overview"}>{numbers}</a></p>
-        <p><strong>Numbers Protocol on Avalanche</strong><br>Transaction ID: <a href={"https://snowtrace.io/search?f=0&q="+avalanche}>{avalanche}</a></p>
-        <p><strong>Storage and archiving</strong></p>
-        <p><strong>IPFS</strong><br>CID: <a href={"http://ipfs.io/ipfs/"+ipfs}>{ipfs}</a></p>
-        <p><strong>Filecoin</strong><br>Piece Content ID: <a href="https://filecoin.tools">{filecoin}</a></p>
-        <a href={"http://ipfs.io/ipfs/"+ipfs} class="button"><strong>Download archive</strong></a>
+        <div id="info" class="content">
+          {#if parsed_json}
+          <p><strong>Archive name</strong><br>{archive_name}</p>
+          <p><strong>Webpage</strong><br><a href={url}>{url}</a></p>
+          <p><strong>Archived on</strong><br>{date_crawled}</p>
+          <p><strong>Observed by</strong><br>{domain}<br>{domainCert.slice(0,100)}</p>
+          <p><strong>Package hash</strong><br>{package_hash}</p>
+  
+          <p><strong>Blockchain registration</strong></p>
+          <p><strong>ISCN on Likecoin</strong><br>Transaction ID: <a href={"https://app.like.co/"}>{iscn}</a></p>
+          <p><strong>Numbers Protocol on Numbers</strong><br>Transaction ID: <a href={"https://mainnet.num.network/overview"}>{numbers}</a></p>
+          <p><strong>Numbers Protocol on Avalanche</strong><br>Transaction ID: <a href={"https://snowtrace.io/search?f=0&q="+avalanche}>{avalanche}</a></p>
+          <p><strong>Storage and archiving</strong></p>
+          <p><strong>IPFS</strong><br>CID: <a href={"http://ipfs.io/ipfs/"+ipfs}>{ipfs}</a></p>
+          <p><strong>Filecoin</strong><br>Piece Content ID: <a href="https://filecoin.tools">{filecoin}</a></p>
+          <a href={"http://ipfs.io/ipfs/"+ipfs} class="button"><strong>Download archive</strong></a>
+  
+          {/if}
+        </div>
 
-        {/if}
-      </div>
     
     </div>  
   </div>
@@ -109,16 +115,68 @@
     background-color: #eeeef4;
   }
 
-  #info, replay-web-page {
-    float: left;
-    /* display: inline; */
-    /* position: relative; */
-    width: calc(50% - 10px);
+  /* @media(max-width: 800px) { */
+    replay-web-page {
+      position: absolute;
+      top: 100px;
+      z-index: 1;
+    }
+
+    details {
+      position: relative;
+      padding: 4px 10px;
+      background-color: #D8DDE6;
+      z-index: 2;
+      border: 2px solid #AAB6C2;
+    }
+  /* }
+
+  
+
+  @media(min-width: 800px) {
+    #info, replay-web-page {
+      float: left;
+      width: calc(50% - 10px);
+    }
+  } */
+
+  details {
+    /* max-width: 500px; */
+    overflow: hidden;
+    border-radius: 30px;
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
   }
 
-  #info {
-    margin: 10px;
+
+  div.content { 
+    margin: 1px;
+    position: relative;
+    padding: 0 10px;
+    z-index: 2;
+    /* width: 100%; */
+    border: 2px solid #eeeef4;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 400ms ease-out, border 0ms 400ms linear;
+    background-color: #D8DDE6;
   }
+  details[open] + div.content {
+    border: 2px solid #AAB6C2;
+    max-height: 1200px; /* Set a max-height value enough to show all the content */        
+    transition: max-height 400ms ease-out, border 0ms linear;
+  }
+
+  details[open] span::before {
+      rotate: 90deg;
+      transition: rotate 200ms ease-out;
+  }
+
 
   .info-title {
     font-size: 18px;
