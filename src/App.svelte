@@ -6,7 +6,9 @@
 
   export let filename = 'mono-county-pdf-01-2023-08-25T15-57-33.wacz';
   // let visible = false;
-  export let https_link = 'https://giacomobg.github.io/wacz-component/dist/assets/'
+  export let path = 'https://giacomobg.github.io/wacz-component/dist/assets/'
+  // export let replayBase;
+  export let replayBase = './replay/';
 
   // let json_content;
   // let json;
@@ -16,12 +18,12 @@
   let parsed_json = false;
 
   async function import_json() {
-      let response_content = await fetch(https_link+filename+'.content.json');
+      let response_content = await fetch(path+filename+'.content.json');
       let response_json_content = await response_content.json();
       const json_content = response_json_content['contentMetadata']
       console.log(json_content);
       
-      let response = await fetch(https_link + filename + '.json');
+      let response = await fetch(path + filename + '.json');
       const json = await response.json();
 
       url = json_content['private']['crawl_config']['config']['seeds'][0]['url'];
@@ -58,7 +60,13 @@
   
       <p class='info-title'>Mono County</p>
     
-      <replay-web-page id="embed" source={"assets/" + filename} embed="replay-only" {url}>
+      <replay-web-page
+        id="embed" 
+        source={path + filename} 
+        embed="replay-only" 
+        {url}
+        replayBase={replayBase}
+        >
       </replay-web-page>
     
       <div id="info">
