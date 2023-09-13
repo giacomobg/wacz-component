@@ -8,30 +8,30 @@
   // let visible = false;
   export let path = 'https://giacomobg.github.io/wacz-component/dist/assets/'
   // export let replayBase;
-  export let replayBase = './dist/replay/';
+  export let replayBase = './replay/';
 
   // let json_content;
   // let json;
 
   let url, archive_name, date_crawled, domain, domainCert,
-    package_hash, iscn, numbers, avalanche, ipfs, filecoin;
+    package_hash, iscn, numbers, avalanche, ipfs, filecoin,
+    page_name;
   let parsed_json = false;
 
   async function import_json() {
       let response_content = await fetch(path+filename+'.content.json');
       let response_json_content = await response_content.json();
       const json_content = response_json_content['contentMetadata']
-      console.log(json_content);
       
       let response = await fetch(path + filename + '.json');
       const json = await response.json();
 
+      page_name = json_content.name;
       url = json_content['private']['crawl_config']['config']['seeds'][0]['url'];
-      console.log(json)
       archive_name = json.sourceId.value;
       date_crawled = json_content.extras.wacz.dateCrawled;
       domain = json_content.validatedSignatures[0].custom.domain;
-      domainCert = "To be hashed:" + json_content.validatedSignatures[0].custom.domainCert;
+      domainCert = json_content.validatedSignatures[0].custom.domainCert;
       package_hash = json_content.validatedSignatures[0].custom.hash;
       iscn = json.registrationRecords.iscn.txHash;
       numbers = json.registrationRecords.numbersProtocol.numbers.txHash;
@@ -52,13 +52,19 @@
 
   // $: if (json_content) {
   // } 
+  function hash(data) {
+    data = data.replaceAll("-----BEGIN CERTIFICATE-----","").replaceAll("-----END CERTIFICATE-----","").replaceAll(/\s/g, '').replaceAll("=", "");
+    data = data.slice(0,100)
+    // console.log(data);
+    // data = atob(data);
+    return data
+  }
 
 </script>
 
-  <div class="popup-container">
     <div id="wacz-popup">
   
-      <p class='info-title'>Mono County</p>
+      <p class='info-title'>{page_name}</p>
     
       <replay-web-page
         id="embed" 
@@ -76,42 +82,56 @@
 
         <div id="info" class="content">
           {#if parsed_json}
-          <p><strong>Archive name</strong><br>{archive_name}</p>
-          <p><strong>Webpage</strong><br><a href={url}>{url}</a></p>
-          <p><strong>Archived on</strong><br>{date_crawled}</p>
-          <p><strong>Observed by</strong><br>{domain}<br>{domainCert.slice(0,100)}</p>
-          <p><strong>Package hash</strong><br>{package_hash}</p>
+          <div class="property-group">
+            <p><strong>Archive name</strong><br>{archive_name}</p>
+          </div>
+          <div class="property-group">
+            <p><strong>Webpage</strong><br><a href={url}>{url}</a></p>
+          </div>
+
+          <div class="property-group">
+            <p><strong>Archived on</strong><br>{date_crawled}</p>
+          </div>
+
+          <div class="property-group">
+            <p><strong>Observed by</strong><br>{domain}<br>{hash(domainCert)}</p>
+          </div>
+
+          <div class="property-group">
+            <p><strong>Package hash</strong><br>{package_hash}</p>
+          </div>
   
-          <p><strong>Blockchain registration</strong></p>
-          <p><strong>ISCN on Likecoin</strong><br>Transaction ID: <a href={"https://app.like.co/"}>{iscn}</a></p>
-          <p><strong>Numbers Protocol on Numbers</strong><br>Transaction ID: <a href={"https://mainnet.num.network/overview"}>{numbers}</a></p>
-          <p><strong>Numbers Protocol on Avalanche</strong><br>Transaction ID: <a href={"https://snowtrace.io/search?f=0&q="+avalanche}>{avalanche}</a></p>
-          <p><strong>Storage and archiving</strong></p>
-          <p><strong>IPFS</strong><br>CID: <a href={"http://ipfs.io/ipfs/"+ipfs}>{ipfs}</a></p>
-          <p><strong>Filecoin</strong><br>Piece Content ID: <a href="https://filecoin.tools">{filecoin}</a></p>
-          <a href={"http://ipfs.io/ipfs/"+ipfs} class="button"><strong>Download archive</strong></a>
-  
+          <div class="property-group">
+            <p class="subheading"><em><strong>Blockchain registration</strong></em></p>
+            <p><strong>ISCN on Likecoin</strong><br>Transaction ID: <a href={"https://app.like.co/"}>{iscn}</a></p>
+            <p><strong>Numbers Protocol on Numbers</strong><br>Transaction ID: <a href={"https://mainnet.num.network/overview"}>{numbers}</a></p>
+            <p><strong>Numbers Protocol on Avalanche</strong><br>Transaction ID: <a href={"https://snowtrace.io/search?f=0&q="+avalanche}>{avalanche}</a></p>
+          </div>
+
+          <div class="property-group">
+            <p class="subheading"><em><strong>Storage and archiving</strong></em></p>
+            <p><strong>IPFS</strong><br>CID: <a href={"http://ipfs.io/ipfs/"+ipfs}>{ipfs}</a></p>
+            <p><strong>Filecoin</strong><br>Piece Content ID: <a href="https://filecoin.tools">{filecoin}</a></p>
+          </div>
+
+          <div class="property-group">
+            <a href={"http://ipfs.io/ipfs/"+ipfs} class="button"><strong>Download archive</strong></a>
+          </div>
+          
           {/if}
         </div>
 
     
     </div>  
-  </div>
 
 
 <style>
 
-  .popup-container {
-    display: block;
-    height: 100%;
-    width: 100%;
-  }
 
   #wacz-popup {
     height: 100%;
     width: 100%;
     position: absolute;
-    /* color: white; */
     background-color: #eeeef4;
   }
 
@@ -144,7 +164,7 @@
     /* max-width: 500px; */
     overflow: hidden;
     border-radius: 30px;
-    width: 300px;
+    width: 400px;
     text-align: center;
     font-size: 20px;
     cursor: pointer;
@@ -154,7 +174,6 @@
   div.content { 
     margin: 1px;
     position: relative;
-    padding: 0 10px;
     z-index: 2;
     /* width: 100%; */
     border: 2px solid #eeeef4;
@@ -170,6 +189,8 @@
     border: 2px solid #AAB6C2;
     max-height: 1200px; /* Set a max-height value enough to show all the content */        
     transition: max-height 400ms ease-out, border 0ms linear;
+    padding-bottom: 20px;
+
   }
 
   details[open] span::before {
@@ -181,6 +202,15 @@
   .info-title {
     font-size: 18px;
     font-weight: 700;
+  }
+
+  .property-group {
+    padding-left: 4px;
+    border-left: 2px solid #333;
+  }
+
+  .subheading {
+    font-size: 1.1em;
   }
 
 </style>
