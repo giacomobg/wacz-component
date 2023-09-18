@@ -7,9 +7,12 @@ Load the index js and css files from `/dist` and then use
 
 #### Attributes
 
-filename - .wacz filename e.g. `mono-county-pdf-01-2023-08-25T15-57-33.wacz`  
-path - path to .wacz file, relative or absolute e.g. `/assets/` or `https://www.example.com/path/to/file/`  
-replayBase - path to sw.js, same as it would be for replay-web-page  
+**filename**  
+.wacz filename e.g. `mono-county-pdf-01-2023-08-25T15-57-33.wacz`  
+**path**  
+path to .wacz file, relative or absolute e.g. `/assets/` or `https://www.example.com/path/to/file/`  
+**replayBase**  
+path to sw.js, same as it would be for replay-web-page  
 
 ## Svelte project compiled with Vite
 
