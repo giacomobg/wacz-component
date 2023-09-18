@@ -15,7 +15,7 @@
 
   let url, archive_name, date_crawled, domain, domainCert,
     package_hash, iscn, numbers, avalanche, ipfs, filecoin,
-    page_name;
+    page_name, sha256Hash;
   let parsed_json = false;
 
   async function import_json() {
@@ -38,6 +38,7 @@
       avalanche = json.registrationRecords.numbersProtocol.avalanche.txHash;
       ipfs = json.content.cid;
       filecoin = "Will come later";
+      hash(domainCert).then(hash => sha256Hash = hash);
 
       parsed_json = true;
   }
@@ -52,12 +53,27 @@
 
   // $: if (json_content) {
   // } 
-  function hash(data) {
+ async function hash(data) {
     data = data.replaceAll("-----BEGIN CERTIFICATE-----","").replaceAll("-----END CERTIFICATE-----","").replaceAll(/\s/g, '').replaceAll("=", "");
-    data = data.slice(0,100)
-    // console.log(data);
-    // data = atob(data);
-    return data
+    data = atob(data);
+
+    // Convert the binary data to an ArrayBuffer
+    const buffer = new ArrayBuffer(data.length);
+    const view = new Uint8Array(buffer);
+    for (let i = 0; i < data.length; i++) {
+      view[i] = data.charCodeAt(i);
+    }
+
+    // Create a SHA-256 hash of the binary data
+    const sha256Hash = crypto.subtle.digest('SHA-256', buffer).then(hashBuffer => {
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const sha256Hash = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+      return sha256Hash;
+    }).catch(error => {
+      console.error(error);
+    });
+    
+    return sha256Hash;
   }
 
 </script>
@@ -94,7 +110,7 @@
           </div>
 
           <div class="property-group">
-            <p><strong>Observed by</strong><br>{domain}<br>{hash(domainCert)}</p>
+            <p><strong>Observed by</strong><br>{domain}<br>View certificate: <a href={'https://crt.sh/?='+sha256Hash}>{sha256Hash}</a></p>
           </div>
 
           <div class="property-group">
@@ -132,7 +148,7 @@
     height: 100%;
     width: 100%;
     position: absolute;
-    background-color: #eeeef4;
+    background-color: #fff;
   }
 
   /* @media(max-width: 800px) { */
@@ -145,9 +161,9 @@
     details {
       position: relative;
       padding: 4px 10px;
-      background-color: #D8DDE6;
+      background-color: #F2F3F7;
       z-index: 2;
-      border: 2px solid #AAB6C2;
+      border: 2px solid #8997C1;
     }
   /* }
 
@@ -176,17 +192,17 @@
     position: relative;
     z-index: 2;
     /* width: 100%; */
-    border: 2px solid #eeeef4;
+    border: 2px solid #fff;
     border-radius: 20px;
     box-sizing: border-box;
     padding: 0 10px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 400ms ease-out, border 0ms 400ms linear;
-    background-color: #D8DDE6;
+    background-color: #F2F3F7;
   }
   details[open] + div.content {
-    border: 2px solid #AAB6C2;
+    border: 2px solid #8997C1;
     max-height: 1200px; /* Set a max-height value enough to show all the content */        
     transition: max-height 400ms ease-out, border 0ms linear;
     padding-bottom: 20px;
@@ -206,7 +222,7 @@
 
   .property-group {
     padding-left: 4px;
-    border-left: 2px solid #333;
+    border-left: 2px solid #213547;;
   }
 
   .subheading {

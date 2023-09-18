@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <script type="module" crossorigin src="https://giacomobg.github.io/wacz-component/dist/assets/index-5ff1c177.js"></script>
+    <script type="module" crossorigin src="https://giacomobg.github.io/wacz-component/dist/assets/index-62156d06.js"></script>
     <link rel="stylesheet" href="https://giacomobg.github.io/wacz-component/dist/assets/index-e51212f4.css">
   </head>
   <body>
@@ -25,7 +25,7 @@
     <button onclick="handleOpen()">Click to see WACZ and information</button>
 
       <div class="lightbox-inner-container">
-        <span class="close" onclick="handleClose()">x</span>
+        <span class="close" onclick="handleClose()"><span>&#215;</span></span>
         <wacz-lightbox
         filename="mono-county-pdf-01-2023-08-25T15-57-33.wacz"
         path="https://giacomobg.github.io/wacz-component/dist/assets/"
@@ -53,6 +53,7 @@
     }
 
     .close {
+      display: inline;
       cursor: pointer;
       position: absolute;
       top: 10px;
@@ -62,12 +63,20 @@
       font-size: 35px;
       font-weight: bold;
       z-index: 10;
-      border: 1px solid black;
-      border-radius: 10px;
-      text-align: center;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      color: #545F80;
+      border: 2px solid #68759A;
+      border-radius: 20px;
+      /* margin-bottom: 10px; */
+      /* text-align: center; */
+      /* display: inline-flex; */
+      /* align-items: center; */
+      /* justify-content: center; */
+    }
+
+    .close > span {
+      position: absolute;
+      top: -3px;
+      left: 10px;
     }
 
   </style>
